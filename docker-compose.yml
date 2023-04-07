@@ -8,7 +8,7 @@ services:
     tty: true
     ports:
       - 3000:3000
-    # プロジェクトディレクトリをマウントする
+    # プロジェクトディレクトリにマウントする
     volumes:
       - .:/var/www
 
@@ -24,9 +24,11 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    # ローカルの設定ファイルディレクトリをマウントする
     volumes:
+      # 設定ファイルディレクトリにマウントする
       - ./mysql/conf.d:/etc/mysql/conf.d
+      # DB初期化ディレクトリにマウントする
+      - ./mysql/init.d:/docker-entrypoint-initdb.d
 
   # Webサーバー
   web:
@@ -36,6 +38,6 @@ services:
     ports:
       - 80:80
       - 443:443
-    # ローカルの設定ファイルディレクトリをマウントする
+    # 設定ファイルディレクトリにマウントする
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d

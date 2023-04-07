@@ -34,9 +34,13 @@ $ npm run dev
 
 ```sh
 $ docker-compose exec db /bin/bash
-$ mysql -u root -p
-$ show variables like '%char%';
-$ show variables like '%time_zone%';
+$ mysql -u sandbox -p
+> show variables like '%char%';
+> show variables like '%time_zone%';
+> use sandbox;
+> show tables;
+> select * from authors;
+> select * from books;
 ```
 
 ### 4. 停止
