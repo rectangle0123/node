@@ -8,7 +8,7 @@
 $ docker-compose build
 ```
 
-### 2. Next.jsアプリケーション作成
+### 2. アプリケーション作成
 
 ```sh
 $ docker-compose run --rm node npx create-next-app app-next
@@ -22,7 +22,7 @@ $ docker-compose run --rm node npx create-next-app app-next
 $ docker-compose up -d
 ```
 
-### 2. NodeコンテナでNext.jsアプリケーションの開発サーバー起動
+### 2. アプリケーションの開発サーバー起動
 
 ```sh
 $ docker-compose exec node /bin/bash
@@ -30,7 +30,7 @@ $ cd app-next
 $ npm run dev
 ```
 
-### 3. MySQLに入ってみる
+### 3. DB接続
 
 ```sh
 $ docker-compose exec db /bin/bash
@@ -40,7 +40,7 @@ $ mysql -u sandbox -p
 > use sandbox;
 > show tables;
 > select * from authors;
-> select * from books;
+> select b.id, b.name, a.name from books b left join authors a on b.author = a.id;
 ```
 
 ### 4. 停止
