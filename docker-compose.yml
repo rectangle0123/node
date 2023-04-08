@@ -11,6 +11,9 @@ services:
     # プロジェクトディレクトリにマウントする
     volumes:
       - .:/var/www
+    # ネットワーク
+    networks:
+      - default
 
   # データベース
   db:
@@ -29,15 +32,11 @@ services:
       - ./mysql/conf.d:/etc/mysql/conf.d
       # DB初期化ディレクトリにマウントする
       - ./mysql/init.d:/docker-entrypoint-initdb.d
+    # ネットワーク
+    networks:
+      - default
 
-  # Webサーバー
-  web:
-    image: nginx:latest
-    container_name: nginx
-    restart: always
-    ports:
-      - 80:80
-      - 443:443
-    # 設定ファイルディレクトリにマウントする
-    volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
+# ネットワーク
+networks:
+  default:
+    driver: bridge
