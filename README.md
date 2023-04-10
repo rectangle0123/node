@@ -34,6 +34,7 @@ $ docker-compose exec db /bin/bash
 $ docker-compose exec node /bin/bash
 $ cd app-next
 $ npm install promise-mysql
+$ npm install dotenv
 ```
 
 ### 3. デバッグサーバー起動
