@@ -1,4 +1,4 @@
-# Applications on Node.js
+# Node.js Applications on Docker
 
 ## Setup
 
