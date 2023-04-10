@@ -1,51 +1,65 @@
-# Next.js with Docker
+# Applications on Node.js
 
-## セットアップ
+## Setup
 
-### 1. コンテナビルド
+### 1. Build container
 
 ```sh
 $ docker-compose build
 ```
 
-### 2. アプリケーション作成
+### 2. Create applications
 
 ```sh
+# Create Next.js Application
 $ docker-compose run --rm node npx create-next-app app-next
 ```
 
-## 使い方
+## Usage
 
-### 1. コンテナ起動
+### 1. Startup container
 
 ```sh
 $ docker-compose up -d
 ```
 
-### 2. DBコンテナに接続
+### 2. Login in DB
+
+To execute queries as needed.
 
 ```sh
 $ docker-compose exec db /bin/bash
+$ mysql -u username -p
 ```
 
-### 3. アプリケーションにパッケージインストール
+### 3. Install packages into applications
 
 ```sh
 $ docker-compose exec node /bin/bash
+
+# For Next.js apoplication
 $ cd app-next
 $ npm install promise-mysql
 $ npm install dotenv
 ```
 
-### 3. デバッグサーバー起動
+### 4. Startup debug servers
+
+Kick the application which you like.
 
 ```sh
 $ docker-compose exec node /bin/bash
+
+# Startup Next.js apoplication
 $ cd app-next
 $ npm run dev
 ```
 
-### 4. 停止
+### 5. Confirmation
+
+- Next.js Application http://localhost:3000/books/
+
+### 6. Shutdown container
 
 ```sh
 $ docker-compose down
