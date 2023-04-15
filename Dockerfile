@@ -16,5 +16,11 @@ ENV TERM xterm
 # Vimインストール
 RUN apt install -y vim
 
+# npmアップデート
+RUN npm install -g npm@latest
+
+# create-react-appをインストール
+RUN npm install create-react-app
+
 # create-next-appをインストール
-RUN npm install -g npm@latest && npm install create-next-app
+RUN npm install create-next-app

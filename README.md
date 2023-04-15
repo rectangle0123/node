@@ -11,6 +11,9 @@ $ docker-compose build
 ### 2. Create applications
 
 ```sh
+# Create React Application
+$ docker-compose run --rm node npx create-react-app --template typescript app-react
+
 # Create Next.js Application
 $ docker-compose run --rm node npx create-next-app app-next
 ```
@@ -37,6 +40,10 @@ $ mysql -u username -p
 ```sh
 $ docker-compose exec node /bin/bash
 
+# For React apoplication
+$ cd app-react
+$ npm install react-router-dom
+
 # For Next.js apoplication
 $ cd app-next
 $ npm install promise-mysql
@@ -50,6 +57,10 @@ Kick the application which you like.
 ```sh
 $ docker-compose exec node /bin/bash
 
+# Startup React apoplication
+$ cd app-react
+$ npm start
+
 # Startup Next.js apoplication
 $ cd app-next
 $ npm run dev
@@ -57,7 +68,11 @@ $ npm run dev
 
 ### 5. Confirmation
 
-- Next.js Application http://localhost:3000/books/
+- React.js Application
+    - http://localhost:3000/startup/
+    - http://localhost:3000/tic-tac-toe/
+- Next.js Application
+    - http://localhost:3000/books/
 
 ### 6. Shutdown container
 
