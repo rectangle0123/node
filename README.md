@@ -38,6 +38,14 @@ $ docker-compose exec node /bin/bash
 $ cd app-react
 $ npm start
 
+# Startup NestJS application
+#   Additinal packages:
+#     - mysql
+#     - typeorm
+#     - dotenv
+$ cd app-nestjs
+$ npm run start:dev
+
 # Startup Next.js application
 #   Additinal packages:
 #     - promise-mysql
@@ -51,6 +59,8 @@ $ npm run dev
 - React.js Application
     - http://localhost:3000/startup/
     - http://localhost:3000/tic-tac-toe/
+- NestJS Application
+    - http://localhost:3000/books/
 - Next.js Application
     - http://localhost:3000/books/
 
