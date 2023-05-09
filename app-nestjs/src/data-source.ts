@@ -1,10 +1,10 @@
-import 'reflect-metadata'
-import {DataSource} from 'typeorm'
-import {Author} from './entities/Author'
-import {Book} from './entities/Book'
+import 'reflect-metadata';
+import { DataSource } from 'typeorm';
+import { Author } from './entities/Author';
+import { Book } from './entities/Book';
 
 // 環境変数
-require('dotenv').config({path: '../.env'})
+require('dotenv').config({path: '../.env'});
 
 // データソース
 export const AppDataSource = new DataSource({
@@ -17,9 +17,9 @@ export const AppDataSource = new DataSource({
   synchronize: false,
   logging: false,
   entities: [Author, Book]
-})
+});
 
 // 初期化
 AppDataSource.initialize().then(() => {
   console.log('DataSource has been initialized!')
-}).catch((error) => console.log(error))
+}).catch((error) => console.log(error));
