@@ -36,6 +36,7 @@ $ docker-compose exec node /bin/bash
 #   Additinal packages:
 #     - react-router-dom
 $ cd app-react
+$ npm install
 $ npm start
 
 # Startup NestJS application
@@ -44,6 +45,7 @@ $ npm start
 #     - typeorm
 #     - dotenv
 $ cd app-nestjs
+$ npm install
 $ npm run start:dev
 
 # Startup Next.js application
@@ -51,6 +53,7 @@ $ npm run start:dev
 #     - promise-mysql
 #     - dotenv
 $ cd app-next
+$ npm install
 $ npm run dev
 ```
 
