@@ -1,0 +1,3 @@
+[submodule "app-web/build"]
+	path = app-web/build
+	url = git@github.com:rectangle0123/web.git
