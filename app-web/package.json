@@ -26,9 +26,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "prebuild": "mv build/.git ./",
+    "prebuild": "mkdir temp && mv build/.git temp/ && mv build/.gitignore temp/ && mv build/README.md temp/",
     "build": "react-scripts build",
-    "postbuild": "mv ./.git build/ && cp build/index.html build/404.html",
+    "postbuild": "mv temp/.git build/ && mv temp/.gitignore build/ && mv temp/README.md build/ && rm -rf temp && cp build/index.html build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
