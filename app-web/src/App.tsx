@@ -16,6 +16,7 @@ export const router = createBrowserRouter([{
   ],
 }]);
 
+// アプリケーション
 function App() {
   return (
     <RouterProvider router={router} />

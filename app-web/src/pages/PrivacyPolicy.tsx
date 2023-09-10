@@ -8,6 +8,7 @@ import Markdown from '../components/Markdown';
 import post_en from '../posts/privacy-policy-en.md';
 import post_ja from '../posts/privacy-policy-ja.md';
 
+// プライバシーポリシー画面
 export default function PrivacyPolicy() {
   // ポストを読み込む
   const {lang} = useParams();

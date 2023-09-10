@@ -1,6 +1,7 @@
 import AppBase from "../components/AppBase";
 import ErrorContent from "../components/ErrorContent";
 
+// 404エラーページ画面
 export default function Error404() {
   return (
     <AppBase>
